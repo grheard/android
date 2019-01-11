@@ -30,7 +30,7 @@ android {
             }
         }
         resConfigs "en", "de"
-        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     buildTypes {
@@ -151,7 +151,7 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:${supportLibVersion}"
     implementation "com.android.support:support-annotations:${supportLibVersion}"
     implementation "com.android.support:design:${supportLibVersion}"
-    implementation "com.mikepenz:materialize:1.2.0@aar"
+    implementation "com.mikepenz:materialize:1.1.2@aar"
 
     // Preprocessors
     annotationProcessor "org.greenrobot:eventbus-annotation-processor:3.1.1"
@@ -167,6 +167,12 @@ dependencies {
     testImplementation "org.powermock:powermock-api-mockito2:2.0.0"
     testImplementation "org.robolectric:shadows-playservices:4.1"
     testImplementation "org.robolectric:robolectric:4.1"
+
+    androidTestImplementation 'androidx.test:core:1.1.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test:rules:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
 
 apply from: "coverage.gradle"
