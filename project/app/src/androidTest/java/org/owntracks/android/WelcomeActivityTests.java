@@ -26,7 +26,6 @@ public class WelcomeActivityTests {
     @Test
     public void WelcomeScreenLoadsAndResponds() {
         onView(withId(R.id.btn_next)).perform(click());
-        onView(withId(R.id.btn_next)).perform(click());
         onView(withId(R.id.done)).perform(click());
     }
 }
