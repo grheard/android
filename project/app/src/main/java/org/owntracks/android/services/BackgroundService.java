@@ -502,7 +502,7 @@ public class BackgroundService extends DaggerService implements OnCompleteListen
 
                 break;
             case LocationProcessor.MONITORING_MOVE:
-                request.setInterval(TimeUnit.SECONDS.toMillis(30));
+                request.setInterval(TimeUnit.SECONDS.toMillis(preferences.getMoveLocatorInterval()));
                 request.setFastestInterval(TimeUnit.SECONDS.toMillis(10));
                 request.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
                 break;

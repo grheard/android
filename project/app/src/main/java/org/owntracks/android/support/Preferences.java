@@ -373,6 +373,11 @@ public class Preferences {
         return getInt(Keys.LOCATOR_INTERVAL, R.integer.valLocatorInterval);
     }
 
+    @Export(key =Keys.MOVE_LOCATOR_INTERVAL, exportModeMqttPrivate =true, exportModeHttpPrivate =true)
+    public int getMoveLocatorInterval() {
+        return getInt(Keys.MOVE_LOCATOR_INTERVAL, R.integer.valMoveLocatorInterval);
+    }
+
     @Export(key =Keys.LOCATOR_PRIORITY, exportModeMqttPrivate =true, exportModeHttpPrivate =true)
     public int getLocatorPriority() {
         return getInt(Keys.LOCATOR_PRIORITY, R.integer.valLocatorPriority);
@@ -691,6 +696,10 @@ public class Preferences {
         }
     }
 
+    @Import(key =Keys.MOVE_LOCATOR_INTERVAL)
+    private void setMoveLocatorInterval(int anInt) {
+        setInt(Keys.MOVE_LOCATOR_INTERVAL, anInt);
+    }
 
     @Import(key =Keys.PUB_RETAIN)
     private void setPubRetain(boolean aBoolean) {
@@ -946,6 +955,7 @@ public class Preferences {
         public static final String LOCATOR_DISPLACEMENT             = "locatorDisplacement";
         public static final String LOCATOR_INTERVAL                 = "locatorInterval";
         public static final String LOCATOR_PRIORITY                 = "locatorPriority";
+        public static final String MOVE_LOCATOR_INTERVAL            = "moveLocatorInterval";
         public static final String MODE_ID                          = "mode";
         public static final String MONITORING                       = "monitoring";
         public static final String MQTT_PROTOCOL_LEVEL              = "mqttProtocolLevel";
