@@ -29,6 +29,7 @@ public class MessageCmd extends MessageBase{
     public static final String ACTION_RESTART = "restart";
     public static final String ACTION_RECONNECT = "reconnect";
     public static final String ACTION_WAYPOINTS = "waypoints";
+    public static final String ACTION_DUMP = "dump";
 
     private MessageWaypoints waypoints;
     private final Map<String,Object> map = new HashMap<>();

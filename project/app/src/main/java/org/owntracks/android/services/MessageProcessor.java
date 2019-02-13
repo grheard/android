@@ -15,6 +15,7 @@ import org.owntracks.android.messages.MessageBase;
 import org.owntracks.android.messages.MessageCard;
 import org.owntracks.android.messages.MessageClear;
 import org.owntracks.android.messages.MessageCmd;
+import org.owntracks.android.messages.MessageConfiguration;
 import org.owntracks.android.messages.MessageLocation;
 import org.owntracks.android.messages.MessageTransition;
 import org.owntracks.android.messages.MessageUnknown;
@@ -357,6 +358,10 @@ public class MessageProcessor implements IncomingMessageProcessor {
                     break;
                 case MessageCmd.ACTION_RESTART:
                     App.restart();
+                    break;
+                case MessageCmd.ACTION_DUMP:
+                    Timber.d("dumping configuration.");
+                    sendMessage(preferences.exportToMessage());
                     break;
                 default:
                     break;
