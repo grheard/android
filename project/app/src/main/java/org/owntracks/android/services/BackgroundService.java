@@ -723,7 +723,7 @@ public class BackgroundService extends DaggerService implements OnCompleteListen
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (Preferences.Keys.LOCATOR_INTERVAL.equals(key) || Preferences.Keys.LOCATOR_DISPLACEMENT.equals(key) || Preferences.Keys.LOCATOR_PRIORITY.equals(key)) {
+        if (Preferences.Keys.LOCATOR_INTERVAL.equals(key) || Preferences.Keys.LOCATOR_DISPLACEMENT.equals(key) || Preferences.Keys.LOCATOR_PRIORITY.equals(key) || Preferences.Keys.MOVE_LOCATOR_INTERVAL.equals(key)) {
             Timber.v("locator preferences changed. Resetting location request.");
             setupLocationRequest();
         }
